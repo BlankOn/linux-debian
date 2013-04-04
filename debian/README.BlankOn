@@ -1,12 +1,7 @@
 How to maintain kernel under BlankOn
 
-There are two repositories:
-0. The git repository to store the Debian changes, this one is used by developers
-1. The bzr repository to store ready to use Debian directory, this one is used by irgsh
-
-TOOLS
+TOOL
 - git-svn to submit to git repo and get Debian changes with subversion
-- bzr to submit to bzr repo
 
 STEPS
 A. PREPARATION
