@@ -40,7 +40,7 @@ dch -i -c debian/changelog.BlankOn
 git push blankon
 
 - Create a directory called build 
-mkdir -f build
+mkdir -p build
 
 - Go to build
 cd build
@@ -55,3 +55,4 @@ mv changelog.BlankOn changelog
 ./debian/rules debian/control
 
 Package the build directory as a tarball and send it to irgsh with matching linux kernel file from kernel.org.
+
