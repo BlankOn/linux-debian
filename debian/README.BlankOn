@@ -41,6 +41,9 @@ git merge blankon/master
 - Update the version number, using BlankOn versioning notation
 dch -i -c debian/changelog.BlankOn
 
+- Push the changes back to BlankOn
+git push blankon
+
 - Create a directory called build 
 mkdir -f build
 
