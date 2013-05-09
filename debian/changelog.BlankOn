@@ -1,3 +1,9 @@
+linux (3.8.11-1~1) suroboyo; urgency=low
+
+  * New Upstream Reelase
+
+ -- Rahman Yusri Aftian <aftian@di.blankon.in>  Thu, 09 May 2013 10:14:29 +0700
+
 linux (3.8.5-1~2) suroboyo; urgency=low
 
   * BlankOn release
