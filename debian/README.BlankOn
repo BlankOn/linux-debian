@@ -1,0 +1,58 @@
+How to maintain kernel under BlankOn
+
+TOOL
+- git-svn to submit to git repo and get Debian changes with subversion
+
+STEPS
+A. PREPARATION
+Do this when you are starting to maintain the kernel
+
+- Get Debian changes
+git svn clone svn://svn.debian.org/svn/kernel/dists/trunk/linux linux-debian
+git remote add blankon git@github.com:BlankOn/linux-debian.git
+
+You will have a new directory called linux-debian
+- Do all steps below
+
+B. WHEN THERE IS A NEW MAJOR VERSION
+Do this when the kernel's major version changes, eg. from 3.7 to 3.8
+
+- For each supported architecture, register all packages in that architecture into irgsh
+- Do all steps below
+
+C. WHEN THERE IS A NEW MINOR VERSION
+Do this when the kernel's minor version changes, eg. from 3.8.0 to 3.8.1
+
+- Get Debian changes 
+Go to the directory you keep the Debian changes (we call it linux-debian in the instructions above)
+
+cd /path/you/put/linux-debian
+git svn fetch
+
+- Get BlankOn changes
+git fetch blankon
+git merge blankon/master
+
+- Update the version number, using BlankOn versioning notation
+dch -i -c debian/changelog.BlankOn
+
+- Push the changes back to BlankOn
+git push blankon
+
+- Create a directory called build 
+mkdir -p build
+
+- Go to build
+cd build
+
+- Copy the debian directory
+cp -a ../debian .
+
+- Move BlankOn changelog
+mv changelog.BlankOn changelog
+
+- Generate control file
+./debian/rules debian/control
+
+Package the build directory as a tarball and send it to irgsh with matching linux kernel file from kernel.org.
+
