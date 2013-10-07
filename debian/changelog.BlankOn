@@ -1,3 +1,9 @@
+linux (3.11.2-1blankon1) suroboyo; urgency=low
+
+  * New Upstream Release
+
+ -- Rahman Yusri Aftian <aftian@di.blankon.in>  Mon, 07 Oct 2013 03:00:58 +0000
+
 linux (3.9-1~1blankon1) suroboyo; urgency=low
 
   * New Upstream Release
